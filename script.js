@@ -9,10 +9,11 @@ $(function() {
       //alternates turns of O and X
     } else if (clickCount % 2 === 0) {
       txt = $(this).text('O');
+      clickCount++;
     } else if (clickCount % 2 === 1) {
-        txt = $(this).text('X');
+      txt = $(this).text('X');
+      clickCount++;
     }
-      //keeps track of txt
-    clickCount++;
-  })
+
+  });
 });
