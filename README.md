@@ -5,3 +5,4 @@ This is a Tic Tac Toe Game built using HTML, CSS, and JQUERY.
 
 TO DO:
 Make a computer player to play against
+Delcare a winner
