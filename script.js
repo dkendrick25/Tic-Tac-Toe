@@ -56,6 +56,10 @@ function getCurrentBoard() {
 
 
 $(function() {
+  $('.play-again').click(function() {
+    location.reload();
+  })
+
   //keeps up with clicks
   $('button').click(function () {
     var txt = $(this).text();
@@ -85,8 +89,4 @@ $(function() {
       alert("It's a draw!");
     }
   });
-
-  $('.play-again').click(function() {
-    location.reload();
-  })
 });
