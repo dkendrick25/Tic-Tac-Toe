@@ -61,7 +61,7 @@ $(function() {
   })
 
   //keeps up with clicks
-  $('button').click(function () {
+  $('.button').click(function () {
     var txt = $(this).text();
     //doesn't allow you to change non blank squares
     if (txt === 'O' || txt === 'X'){
