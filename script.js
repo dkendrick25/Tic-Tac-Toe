@@ -59,7 +59,7 @@ $(function() {
   //keeps up with clicks
   $('button').click(function () {
     var txt = $(this).text();
-//doesn't allow you to change non blank squares
+    //doesn't allow you to change non blank squares
     if (txt === 'O' || txt === 'X'){
       txt = $(this).text();
       //alternates turns of O and X
@@ -80,8 +80,13 @@ $(function() {
         alert('The winner is ' + winner);
       }
     }
+
     if (clickCount === 9) {
-      alert("It's a draw!")
+      alert("It's a draw!");
     }
   });
+
+  $('.play-again').click(function() {
+    location.reload();
+  })
 });
