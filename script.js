@@ -60,6 +60,7 @@ var drawCount = 0;
 
 $(function() {
   $('.play-again').hide();
+  $('#winner').hide();
   $('.game-board').addClass('animated bounceIn');
   //keeps up with clicks
   $('.button').click(function () {
@@ -80,7 +81,7 @@ $(function() {
         } else {
           winX++;
         }
-        $('#winner').text('The winner is ' + winner).addClass("animated flipInX");
+        $('#winner').text('The winner is ' + winner).addClass("animated flipInX").show();
         $('.play-again').show();
         updateScore();
       }
@@ -91,7 +92,7 @@ $(function() {
       var board = getCurrentBoard();
       var winner = checkWinner(board);
       if(winner) {
-        $('#winner').text('The winner is ' + winner).addClass("animated flipInX");
+        $('#winner').text('The winner is ' + winner).addClass("animated flipInX").show();
         $('.play-again').show();
         updateScore();
       }
@@ -99,7 +100,7 @@ $(function() {
 
     if (clickCount === 9) {
       drawCount++;
-      $('#winner').text("It's a draw!").addClass('animated flipInX');
+      $('#winner').text("It's a draw!").addClass('animated flipInX').show();
       $('.play-again').show();
       updateScore();
     }
@@ -119,7 +120,7 @@ $(function() {
 function resetGame() {
   clickCount = 0;
   $('.button').text('');
-  //$('#winner').hide();
+  $('#winner').hide();
   $('.play-again').hide();
 }
 //function to update the score
