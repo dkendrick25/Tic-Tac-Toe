@@ -82,6 +82,7 @@ $(function() {
         }
         $('#winner').text('The winner is ' + winner).addClass("animated flipInX");
         $('.play-again').show();
+        updateScore();
       }
       //debugger
     } else if (clickCount % 2 === 1) {
@@ -111,15 +112,12 @@ $(function() {
 //function to clear the board when play again is hit
 //resets the clickCount, gameboard and removes the banner and play-again
 function resetGame() {
-  winX = 0;
-  winO = 0;
-  drawCount = 0;
   clickCount = 0;
   $('.button').text('');
-  //winner').hide();
+  //$('#winner').hide();
   $('.play-again').hide();
 }
 //function to update the score
 function updateScore() {
-  $('.scoreboard').text('O: ' + winO + ' X: ' + winX + ' Draws: ' + drawCount);
+  $('.scoreboard').text('O:  ' + winO + '  X: ' + winX + '  Draws:  ' + drawCount);
 }
