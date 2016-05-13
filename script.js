@@ -74,6 +74,12 @@ $(function() {
       var board = getCurrentBoard();
       var winner = checkWinner(board);
       if(winner) {
+        //keeps score of winners
+        if(winner === 'O') {
+          winO++;
+        } else {
+          winX++;
+        }
         $('#winner').text('The winner is ' + winner).addClass("animated flipInX");
         $('.play-again').show();
       }
@@ -86,12 +92,15 @@ $(function() {
       if(winner) {
         $('#winner').text('The winner is ' + winner).addClass("animated flipInX");
         $('.play-again').show();
+        updateScore();
       }
     }
 
     if (clickCount === 9) {
+      drawCount++;
       $('#winner').text("It's a draw!").addClass('animated flipInX');
       $('.play-again').show();
+      updateScore();
     }
   });
 
@@ -102,8 +111,15 @@ $(function() {
 //function to clear the board when play again is hit
 //resets the clickCount, gameboard and removes the banner and play-again
 function resetGame() {
+  winX = 0;
+  winO = 0;
+  drawCount = 0;
   clickCount = 0;
   $('.button').text('');
-  $('#winner').hide();
+  //winner').hide();
   $('.play-again').hide();
+}
+//function to update the score
+function updateScore() {
+  $('.scoreboard').text('O: ' + winO + ' X: ' + winX + ' Draws: ' + drawCount);
 }
