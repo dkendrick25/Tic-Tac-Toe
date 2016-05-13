@@ -53,7 +53,10 @@ function getCurrentBoard() {
   }
   return moves;
 }
-
+//to keep score
+var winO = 0;
+var winX = 0;
+var drawCount = 0;
 
 $(function() {
   $('.play-again').hide();
@@ -93,6 +96,14 @@ $(function() {
   });
 
   $('.play-again').click(function() {
-    location.reload();
+    resetGame();
   });
 });
+//function to clear the board when play again is hit
+//resets the clickCount, gameboard and removes the banner and play-again
+function resetGame() {
+  clickCount = 0;
+  $('.button').text('');
+  $('#winner').hide();
+  $('.play-again').hide();
+}
