@@ -59,3 +59,9 @@ h1 {
   height:80px;
   margin-left: 32%;
 }
+
+.reset {
+  width: 120px;
+  height: 50px;
+  padding: 10px;
+}

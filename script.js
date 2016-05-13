@@ -108,6 +108,11 @@ $(function() {
   $('.play-again').click(function() {
     resetGame();
   });
+//to reset the page
+  $('.reset').click(function() {
+    location.reload();
+  })
+
 });
 //function to clear the board when play again is hit
 //resets the clickCount, gameboard and removes the banner and play-again
