@@ -45,7 +45,7 @@ function playerOccupiesSquares(player, squares, board) {
 
 //function that returns an array consisting of the current moves on the board
 function getCurrentBoard() {
-  var buttons = $('button');
+  var buttons = $('.button');
   var moves = [];
   for (var i = 0; i < buttons.length; i++) {
     var button = $(buttons[i]);
@@ -56,10 +56,7 @@ function getCurrentBoard() {
 
 
 $(function() {
-  $('.play-again').click(function() {
-    location.reload();
-  })
-
+  $('.play-again').hide();
   //keeps up with clicks
   $('.button').click(function () {
     var txt = $(this).text();
@@ -73,20 +70,28 @@ $(function() {
       var board = getCurrentBoard();
       var winner = checkWinner(board);
       if(winner) {
-        alert('The winner is ' + winner);
+        $('#winner').text('The winner is ' + winner);
+        $('.play-again').show();
       }
+      //debugger
     } else if (clickCount % 2 === 1) {
       txt = $(this).text('X');
       clickCount++;
       var board = getCurrentBoard();
       var winner = checkWinner(board);
       if(winner) {
-        alert('The winner is ' + winner);
+        $('#winner').text('The winner is ' + winner);
+        $('.play-again').show();
       }
     }
 
     if (clickCount === 9) {
-      alert("It's a draw!");
+      $('#winner').text("It's a draw!");
+      $('.play-again').show();
     }
+  });
+
+  $('.play-again').click(function() {
+    location.reload();
   });
 });

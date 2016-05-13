@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family:;
 }
 body {
   background: url(footer_lodyas.png);
@@ -44,4 +45,10 @@ h1 {
 .play-again:active {
   font-size: 1em;
   transform: none;
+}
+
+#winner {
+  color: white;
+  text-size: 20px;
+  text-align: center;
 }
