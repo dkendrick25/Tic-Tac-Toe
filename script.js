@@ -57,6 +57,7 @@ function getCurrentBoard() {
 
 $(function() {
   $('.play-again').hide();
+  $('.game-board').addClass('animated bounceIn');
   //keeps up with clicks
   $('.button').click(function () {
     var txt = $(this).text();
@@ -70,7 +71,7 @@ $(function() {
       var board = getCurrentBoard();
       var winner = checkWinner(board);
       if(winner) {
-        $('#winner').text('The winner is ' + winner);
+        $('#winner').text('The winner is ' + winner).addClass("animated flipInX");
         $('.play-again').show();
       }
       //debugger
@@ -80,13 +81,13 @@ $(function() {
       var board = getCurrentBoard();
       var winner = checkWinner(board);
       if(winner) {
-        $('#winner').text('The winner is ' + winner);
+        $('#winner').text('The winner is ' + winner).addClass("animated flipInX");
         $('.play-again').show();
       }
     }
 
     if (clickCount === 9) {
-      $('#winner').text("It's a draw!");
+      $('#winner').text("It's a draw!").addClass('animated flipInX');
       $('.play-again').show();
     }
   });
